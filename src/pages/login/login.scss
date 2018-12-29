@@ -1,0 +1,363 @@
+page-login {
+
+  .container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    position: relative;
+    z-index: 1;
+  }
+ 
+  .container-login100::before {
+    content: "";
+    
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #005bea;
+    background: -webkit-linear-gradient(bottom, #005bea, #00c6fb);
+    background: -o-linear-gradient(bottom, #005bea, #00c6fb);
+    background: -moz-linear-gradient(bottom, #005bea, #00c6fb);
+    background: linear-gradient(bottom, #005bea, #00c6fb);
+    opacity: 0.9;
+  }
+  
+  .tamaño{
+    width: 75rem;;
+    background: transparent;
+  }
+  
+  
+  
+  /*------------------------------------------------------------------
+  [  ]*/
+  .login100-form {
+   width: 50rem;
+  }
+  
+  .login-box {
+    background: rgba(76,128,240,1);
+ 
+    background: -moz-linear-gradient(-45deg, rgba(82,153,235,1) 0%, rgba(24,106,201,1) 49%, rgba(46,93,189,1) 49%, rgba(46,93,189,1) 49%, rgba(31,133,229,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(82,153,235,1)), color-stop(49%, rgba(24,106,201,1)), color-stop(49%, rgba(46,93,189,1)), color-stop(49%, rgba(46,93,189,1)), color-stop(100%, rgba(31,133,229,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(82,153,235,1) 0%, rgba(24,106,201,1) 49%, rgba(46,93,189,1) 49%, rgba(46,93,189,1) 49%, rgba(31,133,229,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(82,153,235,1) 0%, rgba(24,106,201,1) 49%, rgba(46,93,189,1) 49%, rgba(46,93,189,1) 49%, rgba(31,133,229,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(82,153,235,1) 0%, rgba(24,106,201,1) 49%, rgba(46,93,189,1) 49%, rgba(46,93,189,1) 49%, rgba(31,133,229,1) 100%);
+    background: linear-gradient(135deg, rgba(82,153,235,1) 0%, rgba(24,106,201,1) 49%, rgba(46,93,189,1) 49%, rgba(46,93,189,1) 49%, rgba(31,133,229,1) 100%);
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c80f0', endColorstr='#1952cc', GradientType=1 );    
+    padding: 20px 20px 0px 20px;
+    
+    border-radius: 4%;
+    position: relative;
+    top: 4rem;
+    opacity: 0.9;
+    padding-bottom: 10rem;
+  }
+  .login100-form-title {
+    font-family: Montserrat-ExtraBold;
+    font-size: 30px;
+    color: #fff;
+    line-height: 1.2;
+    text-align: center;
+  
+    width: 100%;
+    display: block;
+  }
+  
+  /*---------------------------------------------*/
+  .login100-form-avatar {
+    width: 15rem;
+    height: 120px;
+   
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .login100-form-avatar img {
+    width: 100%;
+  }
+  .ing{
+    width: 20%;
+  }
+  
+  /*---------------------------------------------*/
+  .wrap-input100 {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .input100 {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #333333;
+  
+    display: block;
+    width: 100%;
+    background: #fff;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 53px;
+  }
+  
+  
+  /*------------------------------------------------------------------
+  [ Focus ]*/
+  .focus-input100 {
+    display: block;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 0px 0px;
+    color: rgba(0,91,234, 0.6);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .input100:focus + .focus-input100 + .symbol-input100 {
+    color: #00c6fb;
+    
+  }
+  
+  
+  /*------------------------------------------------------------------
+  [ Button ]*/
+  .container-login100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .login100-form-btn {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e0e0e0;
+  
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #333333;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    position: relative;
+    z-index: 1;
+  }
+  .login100-form-btn1 {
+    font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #e0e0e0;
+  
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #333333;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+  
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  
+    position: relative;
+    z-index: 1;
+  }
+  
+  .login100-form-btn::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    background: rgba(0,179,60,1);
+    background: -moz-linear-gradient(-45deg, rgba(0,179,60,1) 0%, rgba(0,179,60,1) 47%, rgba(20,184,75,1) 50%, rgba(28,196,84,1) 54%, rgba(5,153,91,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(0,179,60,1)), color-stop(47%, rgba(0,179,60,1)), color-stop(50%, rgba(20,184,75,1)), color-stop(54%, rgba(28,196,84,1)), color-stop(100%, rgba(5,153,91,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(0,179,60,1) 0%, rgba(0,179,60,1) 47%, rgba(20,184,75,1) 50%, rgba(28,196,84,1) 54%, rgba(5,153,91,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(0,179,60,1) 0%, rgba(0,179,60,1) 47%, rgba(20,184,75,1) 50%, rgba(28,196,84,1) 54%, rgba(5,153,91,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(0,179,60,1) 0%, rgba(0,179,60,1) 47%, rgba(20,184,75,1) 50%, rgba(28,196,84,1) 54%, rgba(5,153,91,1) 100%);
+    background: linear-gradient(135deg, rgba(0,179,60,1) 0%, rgba(0,179,60,1) 47%, rgba(20,184,75,1) 50%, rgba(28,196,84,1) 54%, rgba(5,153,91,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b33c', endColorstr='#05995b', GradientType=1 );
+     -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: 0;
+  }
+  .login100-form-btn1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    background: rgb(214, 201, 15);
+    background: -moz-linear-gradient(-45deg, rgb(179, 176, 0) 0%, rgb(179, 176, 0) 47%, rgb(184, 181, 20) 50%, rgb(196, 193, 28) 54%, rgb(153, 151, 5) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgb(179, 176, 0)), color-stop(47%, rgb(176, 179, 0)), color-stop(50%, rgb(184, 173, 20)), color-stop(54%, rgb(196, 193, 28)), color-stop(100%, rgb(153, 143, 5)));
+    background: -webkit-linear-gradient(-45deg, rgb(179, 176, 0) 0%, rgb(179, 176, 0) 47%, rgb(181, 184, 20) 50%, rgb(196, 179, 28) 54%, rgb(153, 138, 5) 100%);
+    background: -o-linear-gradient(-45deg, rgb(179, 167, 0) 0%, rgb(179, 176, 0) 47%, rgb(184, 181, 20) 50%, rgb(193, 196, 28) 54%, rgb(153, 143, 5) 100%);
+    background: -ms-linear-gradient(-45deg, rgb(167, 179, 0) 0%, rgb(179, 176, 0) 47%, rgb(181, 184, 20) 50%, rgb(196, 193, 28) 54%, rgb(153, 143, 5) 100%);
+    background: linear-gradient(135deg, rgb(179, 176, 0) 0%, rgb(176, 179, 0) 47%, rgb(184, 181, 20) 50%, rgb(196, 193, 28) 54%, rgb(153, 151, 5) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b33c', endColorstr='#05995b', GradientType=1 );
+     -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    opacity: 0;
+  }
+  
+  .login100-form-btn:hover {
+    background: transparent;
+    color: #fff;
+  }
+  
+  .login100-form-btn:hover:before {
+    opacity: 1;
+  }
+  
+  .login100-form-btn1:hover {
+    background: transparent;
+    color: #fff;
+  }
+  
+  .login100-form-btn1:hover:before {
+    opacity: 1;
+  }
+  
+  
+  
+  
+  
+  
+  /*------------------------------------------------------------------
+  [ Alert validate ]*/
+  
+  .validate-input {
+    position: relative;
+  }
+  .m{
+    top: 5rem;
+      position: relative;
+      width: 40rem;
+  }
+  .ion-icon{
+    font-size: 1.8em;
+  }
+  
+  
+    .sep{
+      padding-bottom: 2rem;
+    }
+  
+    .sep1{
+      padding-bottom: 15rem;
+      width: 16rem;
+      position: relative;
+      bottom: 2rem;
+    }
+  .alert-validate:hover:before {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  @media (max-width: 992px) {
+    .alert-validate::before {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ responsive ]*/
+  
+  @media (max-width: 576px) {
+    .wrap-login100 {
+      padding-top: 80px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  .emailuser{
+    position: absolute;
+    top: 1.2rem;
+    left: 2.1rem;
+    
+  }
+  .align{
+    position: relative;
+    top: 9rem;
+  }
+  .align1{
+    position: relative;
+    top: 2rem;
+  }
+  .error1{
+    
+    color: #c30d0d;
+    position: relative;
+    left: 1rem;
+    top: 1rem;
+    
+  
+  }
+  
+  }
+
+  

@@ -1,0 +1,76 @@
+page-create-bva {
+    .img{    
+
+        display: block;
+        align-items: center;
+        padding-bottom: 3rem;
+        padding-top: 2rem;
+        width: 25%;
+        bottom: 1rem;
+        position: relative;
+        
+    }  
+      
+      ion-list:first-child {
+            margin-top: 32px;
+          }
+          ion-list + ion-list {
+            margin-top: 0;
+          }
+          .form-error{
+            color: red;
+            padding-left: 3rem;
+          }
+          .picker-toolbar-button{
+            position: relative;
+            right: 22rem;
+            
+          }
+          .picker-toolbar{
+            border-bottom: 1px solid;
+            margin-bottom: 3rem;
+          }
+          .aligin{
+            right: 23px; /* Old browsers */
+             
+        }
+        .alinear{
+          position: relative;
+          right: 1.5rem;
+        }
+        .selector {
+          font-family: SFNSDisplay;
+          font-size: 12px;
+          line-height: 1.2;
+          letter-spacing: 0.1px;
+          color: #29235e;
+          width: 100% !important;
+          max-width: 100% !important;
+          justify-content: center;
+          border: solid 2px #e8ebf0;
+          background-color: #ffffff;
+          text-align: center;
+        }
+        
+        .ing{
+          width: 40rem;
+        }
+        .popover-md .popover-content{
+          width:298px;
+        }
+    }
+    
+    
+    
+    .error1{
+    
+      color: #c30d0d;
+      position: relative;
+      left: 2rem;
+      top: 1rem;
+      padding-bottom: 1rem;
+    
+    
+    
+    
+    }

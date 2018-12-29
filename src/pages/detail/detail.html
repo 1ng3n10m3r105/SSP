@@ -1,0 +1,230 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/form.png" class="ing"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--class="action-sheets-basic-page"  ion-content-->
+
+<ion-content  *ngIf="show">
+
+
+<form #form="ngForm" >
+    
+
+ 
+        <ion-item>
+        <ion-label  floating>Folio UCS</ion-label>
+        <ion-input type="text"  [(ngModel)]="note.folioucs"  name="ucs" #ucs="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="ucs.errors && (ucs.dirty || ucs.touched)">
+        <p color="danger" [hidden]="!ucs.errors.required">Campo requerido.</p>
+        </div>
+
+
+
+        <ion-item>
+        <ion-label floating>Folio Interno</ion-label>
+        <ion-input [(ngModel)]="note.folioInt" name="int" #int="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="int.errors && (int.dirty || int.touched)">
+        <p color="danger" [hidden]="!int.errors.required">Campo requerido.</p>
+        </div>
+
+
+
+        <ion-item>
+        <ion-label floating>Hora de Atencion</ion-label>
+        <ion-datetime type="datetime-local" CancelText = "Cancel"
+        DoneText = "OK" displayFormat="h:mm A" pickerFormat="h:mm A" [(ngModel)]="note.horaAten" name="aten" #aten="ngModel" required></ion-datetime>
+        </ion-item>
+        <div class="form-error" *ngIf="aten.errors && (aten.dirty || aten.touched)">
+        <p color="danger" [hidden]="!aten.errors.required">Campo requerido.</p>
+        </div>
+
+        <ion-item>
+        <ion-label floating>Nombre del Solicitante</ion-label>
+        <ion-input [(ngModel)]="note.nombre" name="nom" #nom="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="nom.errors && (nom.dirty || nom.touched)">
+        <p color="danger" [hidden]="!nom.errors.required">Campo requerido.</p>
+        </div>
+
+
+      
+        <ion-item>
+            
+                     
+            <ion-label floating>Delegacion</ion-label>
+            <ion-select  interface="popover"  id="category"  [(ngModel)]="note.delegacion" [compareWith]="compareFn" name="del" #del="ngModel" required>
+              
+            <ion-option  class="popover-content" right="3rem" *ngFor="let delegation of delegations" [value]="delegation" >
+              {{delegation.nombre}}
+            </ion-option>
+            </ion-select>
+         
+            </ion-item>
+
+            
+           
+          
+              <div class="form-error" *ngIf="del.errors && (del.dirty || del.touched)">
+                  <p color="danger" [hidden]="!del.errors.required">Campo requerido.</p>
+                  </div>
+                
+                 <!-- <button ion-button block (click)="openMenu()">
+                      Show Action Sheet
+                    </button>
+                  -->
+                
+                  <!--<ion-row>
+                    <ion-col col-12>
+                      <div class="form-group">
+                        <ion-label class="content">Category</ion-label>
+                        <ion-select interface="popover" class="selector" placeholder="Category" id="category"
+                                    >
+                          <ion-option *ngFor="let delegation of delegations" [value]="delegation" class="option"
+                                      text-wrap>
+                            {{delegation.nombre}}
+                          </ion-option>
+                        </ion-select>
+                      </div>
+                    </ion-col>
+                  </ion-row>-->
+
+        <ion-item>
+        <ion-label floating>Colonia</ion-label>
+        <ion-input [(ngModel)]="note.colonia" name="col" #col="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="col.errors && (col.dirty || col.touched)">
+        <p color="danger" [hidden]="!col.errors.required">Campo requerido.</p>
+        </div>
+
+
+
+
+        <ion-item>
+        <ion-label floating>Telefono</ion-label>
+        <ion-input [(ngModel)]="note.telefono" name="tel" #tel="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="tel.errors && (tel.dirty || tel.touched)">
+        <p color="danger" [hidden]="!tel.errors.required">Campo requerido.</p>
+        </div>
+
+
+        <ion-item>
+        <ion-label floating>Region</ion-label>
+        <ion-input [(ngModel)]="note.region" name="reg" #reg="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="reg.errors && (reg.dirty || reg.touched)">
+        <p color="danger" [hidden]="!reg.errors.required">Campo requerido.</p>
+        </div>
+
+        <ion-item>
+        <ion-label floating>Sector</ion-label>
+        <ion-input [(ngModel)]="note.sector" name="sec" #sec="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="sec.errors && (sec.dirty || sec.touched)">
+        <p color="danger" [hidden]="!sec.errors.required">Campo requerido.</p>
+        </div>
+
+        <ion-item>
+        <ion-label floating>Cuadrante</ion-label>
+        <ion-input [(ngModel)]="note.cuadrante" name="cua" #cua="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="cua.errors && (cua.dirty || cua.touched)">
+        <p color="danger" [hidden]="!cua.errors.required">Campo requerido.</p>
+        </div>
+
+        <ion-item>
+            
+                     
+          <ion-label floating>Tipo de Atención</ion-label>
+          <ion-select  interface="popover"  id="category"  [(ngModel)]="note.tipo_aten" [compareWith]="compareFn" name="ten" #ten="ngModel" required>
+            
+          <ion-option  class="popover-content" right="3rem" *ngFor="let type_aten of types_aten" [value]="type_aten" >
+            {{type_aten.nombre}}
+          </ion-option>
+          </ion-select>
+       
+          </ion-item>
+
+         <ion-item>
+          <ion-label floating>Especie</ion-label>
+          <ion-select  interface="popover"  id="category"  [(ngModel)]="note.especie" [compareWith]="compareFn" name="cie" #cie="ngModel" required>
+            
+          <ion-option  class="popover-content" right="3rem" *ngFor="let especye of especyes" [value]="especye" >
+            {{especye.nombre}}
+          </ion-option>
+          </ion-select>
+       
+          </ion-item>
+          
+          <ion-item>
+              <ion-label floating>Patrullas en sitio de Atención</ion-label>
+              <ion-textarea rows="5" [(ngModel)]="note.patrullas" name="pat" #pat="ngModel" required></ion-textarea>
+              </ion-item>
+              <div class="form-error" *ngIf="pat.errors && (pat.dirty || pat.touched)">
+              <p color="danger" [hidden]="!pat.errors.required">Campo requerido.</p>
+              </div>
+
+          <ion-item>
+              <ion-label floating>Elementos en sitio de atención.(no. de empleado SSPDF)</ion-label>
+              <ion-textarea rows="5" cols=20 maxlength=20 [(ngModel)]="note.elementos" name="ele" #ele="ngModel" required></ion-textarea>
+              </ion-item>
+              <div class="form-error" *ngIf="ele.errors && (ele.dirty || ele.touched)">
+              <p color="danger" [hidden]="!ele.errors.required">Campo requerido.</p>
+              </div>
+  
+          <ion-item>
+              <ion-label floating>Observaciones</ion-label>
+              <ion-textarea s rows="5" [(ngModel)]="note.observaciones" name="obs" #obs="ngModel" required></ion-textarea>
+              </ion-item>
+              <div class="form-error" *ngIf="obs.errors && (obs.dirty || obs.touched)">
+              <p color="danger" [hidden]="!obs.errors.required">Campo requerido.</p>
+              </div>
+              
+              <ion-item *ngIf="imagenPreview">
+                <img [src]="imagenPreview" style="max-width:30%;">
+               
+              </ion-item>
+
+            
+
+              
+  </form>
+
+  
+  <ion-fab top right>
+      <button ion-fab (click)="addNote(note)" [disabled]="!form.form.valid" >
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-fab>
+
+    <ion-fab class="aligin" top right>
+        <button ion-fab *ngIf="id != 0"  (click)="deleteNote(note)" color="danger">
+          <ion-icon name="trash">
+            
+          </ion-icon>
+        </button>
+      </ion-fab>
+
+      <ion-fab  bottom right>
+          <button ion-fab   (click)="selecionar_foto()" [disabled]="!form.form.valid" color="gris">
+            <ion-icon name="camera">
+              
+            </ion-icon>
+          </button>
+        </ion-fab>
+
+
+</ion-content>
+

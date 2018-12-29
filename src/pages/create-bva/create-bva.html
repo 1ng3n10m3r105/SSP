@@ -1,0 +1,286 @@
+<ion-header>
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/form.png" class="ing"></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <form #form="ngForm" class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+ 
+
+  
+    <ion-item>
+      <ion-label floating >Folio UCS</ion-label>
+      <ion-input formControlName="folioucs"  class="form-control" required></ion-input>
+
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.folioucs">
+        <div class="error-message" *ngIf="validations_form.get('folioucs').hasError(validation.type) && (validations_form.get('folioucs').dirty || validations_form.get('folioucs').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+    <ion-item>
+      <ion-label floating >Folio Interno</ion-label>
+      <ion-input formControlName="folioInt" class="form-control" required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.folioInt">
+        <div class="error-message" *ngIf="validations_form.get('folioInt').hasError(validation.type) && (validations_form.get('folioInt').dirty || validations_form.get('folioInt').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+    <ion-item>
+      <ion-label floating>Hora Atención</ion-label>
+      <ion-datetime  displayFormat="h:mm A" pickerFormat="h:mm A" formControlName="horaAten" class="form-control" required></ion-datetime>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.horaAten">
+        <div class="error-message" *ngIf="validations_form.get('horaAten').hasError(validation.type) && (validations_form.get('horaAten').dirty || validations_form.get('horaAten').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+
+    <ion-item>
+      <ion-label floating >Nombre del solicitante</ion-label>
+      <ion-input formControlName="nombre" class="form-control"  required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.nombre">
+        <div class="error-message" *ngIf="validations_form.get('nombre').hasError(validation.type) && (validations_form.get('nombre').dirty || validations_form.get('nombre').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+
+
+    <ion-item>
+      <ion-label floating >Direccion</ion-label>
+      <ion-input  formControlName="direccion" class="form-control"   required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.direccion">
+        <div class="error-message" *ngIf="validations_form.get('direccion').hasError(validation.type) && (validations_form.get('direccion').dirty || validations_form.get('direccion').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+  
+
+
+    <ion-item>
+      <ion-label floating >Colonia</ion-label>
+      <ion-input  formControlName="colonia" class="form-control" required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.colonia">
+        <div class="error-message" *ngIf="validations_form.get('colonia').hasError(validation.type) && (validations_form.get('colonia').dirty || validations_form.get('colonia').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label floating >Telefono</ion-label>
+      <ion-input  formControlName="telefono" class="form-control"   required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.telefono">
+        <div class="error-message" *ngIf="validations_form.get('telefono').hasError(validation.type) && (validations_form.get('telefono').dirty || validations_form.get('telefono').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+      <ion-item>
+        <ion-label floating >Delegación</ion-label>
+        <ion-select  interface="popover"  formControlName="delegacion"  [compareWith]="compareFn"  required>
+                
+          <ion-option  class="popover-content" right="3rem" *ngFor="let delegation of delegations" [value]="delegation" >
+            {{delegation.nombre}}
+          </ion-option>
+          </ion-select>
+      </ion-item>
+      <div class="error1 validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.delegacion">
+          <div class="error-message" *ngIf="validations_form.get('delegacion').hasError(validation.type) && (validations_form.get('delegacion').dirty || validations_form.get('delegacion').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+
+    <ion-item>
+      <ion-label floating >Región</ion-label>
+      <ion-input  formControlName="region" class="form-control"   required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.region">
+        <div class="error-message" *ngIf="validations_form.get('region').hasError(validation.type) && (validations_form.get('region').dirty || validations_form.get('region').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+   
+
+    <ion-item>
+      <ion-label floating >Sector</ion-label>
+      <ion-input  formControlName="sector" class="form-control"  required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.sector">
+        <div class="error-message" *ngIf="validations_form.get('sector').hasError(validation.type) && (validations_form.get('sector').dirty || validations_form.get('sector').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+ 
+
+    <ion-item>
+      <ion-label floating >Cuadrante</ion-label>
+      <ion-input  formControlName="cuadrante" class="form-control"  required></ion-input>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.cuadrante">
+        <div class="error-message" *ngIf="validations_form.get('cuadrante').hasError(validation.type) && (validations_form.get('cuadrante').dirty || validations_form.get('cuadrante').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  
+
+
+    <ion-item>
+      <ion-label floating >Tipo de Atención</ion-label>
+      <ion-select interface="popover"  formControlName="tipo_aten"   [compareWith]="compareFn"  required>
+              
+        <ion-option  class="popover-content" right="3rem" *ngFor="let type_aten of types_aten" [value]="type_aten" >
+          {{type_aten.nombre}}
+        </ion-option>
+        </ion-select>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.tipo_aten">
+        <div class="error-message" *ngIf="validations_form.get('tipo_aten').hasError(validation.type) && (validations_form.get('tipo_aten').dirty || validations_form.get('tipo_aten').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  
+    <ion-item>
+      <ion-label floating >Especie</ion-label>
+      <ion-select interface="popover"  formControlName="especie"   [compareWith]="compareFn"  required>
+              
+        <ion-option  class="popover-content" right="3rem" *ngFor="let especye of especyes" [value]="especye" >
+          {{especye.nombre}}
+        </ion-option>
+        </ion-select>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.especie">
+        <div class="error-message" *ngIf="validations_form.get('especie').hasError(validation.type) && (validations_form.get('especie').dirty || validations_form.get('especie').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label floating >Patrullas</ion-label>
+      <ion-textarea cols="15" rows="5" formControlName="patrullas" class="form-control"  required></ion-textarea>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.patrullas">
+        <div class="error-message" *ngIf="validations_form.get('patrullas').hasError(validation.type) && (validations_form.get('patrullas').dirty || validations_form.get('patrullas').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item>
+      <ion-label floating >Elementos en sitio(No. de empleado SSPDF)</ion-label>
+      <ion-textarea cols="15" rows="5" name="ele" type="text" formControlName="elementos" class="form-control"  required></ion-textarea>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.elementos">
+        <div class="error-message" *ngIf="validations_form.get('elementos').hasError(validation.type) && (validations_form.get('elementos').dirty || validations_form.get('elementos').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+
+    <ion-item>
+      <ion-label floating >Observaciones</ion-label>
+      <ion-textarea cols="15" rows="5" name="obs" type="text" formControlName="observaciones" class="form-control" required></ion-textarea>
+    </ion-item>
+    <div class="error1 validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.observaciones">
+        <div class="error-message" *ngIf="validations_form.get('observaciones').hasError(validation.type) && (validations_form.get('observaciones').dirty || validations_form.get('observaciones').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+ 
+  <ion-fab top right class="form-action-button"  block type="submit" >
+    <button ion-fab [disabled]="!validations_form.valid">
+      <ion-icon name="add-circle"></ion-icon>
+    </button>
+  </ion-fab>
+  
+  
+
+  </form>
+  <div>
+    <ion-row no-padding>  
+      <ion-col no-padding col-6 offset-3>
+        <ion-item *ngIf="imagenPreview">
+          <img [src]="imagenPreview">
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding class="user-image-row">
+      <ion-col no-padding width-60>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-fab  bottom right meddle>
+    <button class="alinear" ion-fab  color="cielo" >
+      <ion-icon name="images"></ion-icon>
+    </button>
+ 
+  <ion-fab-list side="top">
+     
+  <ion-fab  bottom middle>
+    <button ion-fab class="tamaño"  (click)="selecionar_foto()" color="suave" >
+      <ion-icon name="image"></ion-icon>
+    </button>
+   
+  </ion-fab>
+    </ion-fab-list>
+    
+  <ion-fab-list side="left">
+      <ion-fab    bottom middle>
+          <button  ion-fab class="tamaño alinear"  (click)="mostrar_camara()" color="rosa" >
+            <ion-icon name="camera"></ion-icon>
+          </button>
+         
+        </ion-fab>
+
+    </ion-fab-list>
+  
+     </ion-fab>
+
+
+</ion-content>

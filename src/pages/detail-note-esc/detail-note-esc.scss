@@ -1,0 +1,62 @@
+page-detail-note-esc {
+  .img{    
+
+    display: block;
+    align-items: center;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+    width: 25%;
+    bottom: 1rem;
+    position: relative;
+    
+  }
+  input{
+    width: 5rem;
+    text-align: center;
+
+  }
+
+.tamaño{
+  width: 17rem;
+}
+  .ing{
+    width: 40rem;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-radius: 10%;
+  }
+  th, td {
+    padding: 5px;
+    text-align: center;
+    border-radius: 10%;
+  }
+  .fecha{
+    width: 16rem;
+    border-radius: 10%;
+  }
+  .tamañocarac{
+    width: 35rem;
+    border-radius: 10%;
+  }
+  .tam{
+    width: 7rem;
+    border-radius: 10%;
+  }
+  .patrulla{
+    width: 10rem;
+    border-radius: 10%;
+  }
+  .trans{
+    width: 15rem;
+    border-radius: 10%;
+  }
+  .esc{
+    background: #548dd4;
+  }
+  .esc1{
+    background: #c6d9f1;
+    font-weight: bold;
+  }
+}
+

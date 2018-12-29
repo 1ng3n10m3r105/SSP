@@ -1,0 +1,69 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/sspATEN.png" class="ing"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="tipoaten-content" *ngIf="show">
+    
+<form #form="ngForm" >
+    
+        <ion-item>
+        <ion-label floating>Agregar Tipo de Atención</ion-label>
+        <ion-input type="text" [(ngModel)]="type_aten.nombre"  name="ten" #ten="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="ten.errors && (ten.dirty || ten.touched)">
+            <p color="danger" [hidden]="!ten.errors.required">Campo requerido.</p>
+            </div>
+
+
+
+            <ion-list class="marg-top" >
+                <ion-card *ngFor="let type_aten of types_aten" >
+                    <button class="brillo " ion-item (click)="goToDetailType_aten(type_aten.id)">
+                    <ion-card-content>
+                        <ion-card-title>{{ type_aten.nombre }}</ion-card-title>
+            
+                    </ion-card-content>
+                    </button>
+              </ion-card>
+            </ion-list>
+             
+
+             
+               
+  
+  </form>
+  <ion-fab top right>
+      <button ion-fab  (click)="addType_aten(type_aten)" [disabled]="!form.form.valid">
+        <ion-icon name="add-circle">
+          
+        </ion-icon>
+      </button>
+    </ion-fab>
+
+    <ion-fab class="aligin" top right>
+        <button ion-fab *ngIf="id != 0"  (click)="deleteType_aten(type_aten)" color="danger">
+          <ion-icon name="trash">
+            
+          </ion-icon>
+        </button>
+      </ion-fab>
+
+
+
+        
+
+
+</ion-content>
+

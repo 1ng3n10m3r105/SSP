@@ -1,0 +1,234 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/form.png" class="ing"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--class="action-sheets-basic-page"  ion-content-->
+
+<ion-content >
+<br>
+<div>
+  <ion-card  >
+ 
+    <table  *ngIf="post != 0 " style="width:100%">
+          <tr class="esc">
+              <td colspan="6" style="text-align:center;"><h2 style=" color:white">Animales Atendidos</h2></td>
+             
+    
+            </tr>
+        <tr class="esc1">
+            <td><strong>Folio</strong></td>
+            <td><strong>Fecha Atención</strong></td>
+            <td><strong>Especie</strong></td>
+            <td><strong>Caracteristicas</strong></td>
+            <td><strong>Lugar de traslado</strong></td>
+            <td><strong>Unidad</strong></td>
+  
+          </tr>
+      
+         
+          <tr *ngFor="let post of posts | async ">
+            <td><input class="tam" [(ngModel)]="post.folioInt"></td>
+            <td class="fecha"><input class="tamaño" type="text" [(ngModel)]="post.fechaRec"  ></td>
+            <td><input class="tam" [(ngModel)]="post.especie"   > </td>
+            <td style="width:1rem"><textarea class="tamañocarac" [(ngModel)]="post.observaciones"></textarea></td>
+            <td><input class="trans" [(ngModel)]="post.traslado" ></td>
+            <td><input class="patrulla" [(ngModel)]="post.patrullas"   ></td>
+          </tr>
+             <input type="submit" value="Agregar" (click)="addPost()">
+          
+          </table>
+          <br>
+          <br>
+          <br>
+        
+          <table *ngIf="post1 != 0 " style="width:100%">
+            <tr class="esc">
+                <td colspan="6" style="text-align:center;"><h2 style=" color:white">Animales trasladados (CAVD, PROFEPA)</h2></td>
+               
+      
+              </tr>
+          <tr class="esc1">
+              <td><strong>Folio</strong></td>
+              <td><strong>Fecha</strong></td>
+              <td><strong>Especie</strong></td>
+              <td><strong>Direccion</strong></td>             
+              <td><strong>Unidad</strong></td>
+      
+            </tr>
+        
+        
+      
+            <tr *ngFor="let post1 of posts1 | async ">
+              <td><input class="tam"></td>
+              <td class="fecha"><input class="tamaño" [(ngModel)]="post1.fechaRec"  disabled ></td>
+              <td><input class="tam" [(ngModel)]="post1.especie.nombre"  disabled > </td>
+              <td style="width:1rem"><textarea class="tamañocarac"></textarea></td>
+              <td><input class="patrulla" [(ngModel)]="post1.patrullas"  disabled ></td>
+            </tr>
+      
+            
+            </table>
+            <br>
+            <br>
+            <br>
+        
+            <ng-container  *ngIf="post2 != 0">
+        
+            <table style="width:100%">
+              <tr class="esc">
+                  <td colspan="6" style="text-align:center;"><h2 style=" color:white">Animales Entregados en Adopción</h2></td>
+              </tr>
+            
+              <tr class="esc1">
+                <td><strong>Folio</strong></td>
+                <td><strong>Fecha</strong></td>
+                <td><strong>Nombre o Caracteristicas</strong></td>
+                <td><strong>Adoptado por</strong></td>             
+                <td><strong>Lugar de adopción</strong></td>
+        
+              </tr>
+          
+              <tr *ngFor="let post2 of posts2 | async ">
+                <td><input class="tam"></td>
+                <td class="fecha"><input class="tamaño" [(ngModel)]="post2.fechaRec"  disabled ></td>
+                <td><input class="tam" [(ngModel)]="post2.especie.nombre"  disabled > </td>
+                <td style="width:1rem"><textarea class="tamañocarac"></textarea></td>
+                <td><input class="patrulla" ></td>
+              </tr>
+              
+              
+              </table>
+            </ng-container>
+            <br>
+            <br>
+            <br>
+            
+            <table style="width:100%">
+              <tr class="esc">
+                <td><strong>Especie</strong></td>
+                <td><strong>Total de animales Inicio de turno</strong></td>
+                <td><strong>Ingresos</strong></td>
+                <td><strong>Traslado a instituciones:-CAVD-PROFEPA</strong></td>             
+                <td><strong>Salidas a valoración médica</strong></td>
+                <td><strong>Reingreso de valoración médica</strong></td>
+                <td><strong>Reinserción a su hábitat</strong></td>
+                <td><strong>Adopciones</strong></td>
+                <td><strong>Devolución de adopción</strong></td>             
+                <td><strong>Entrega a su propietario</strong></td>
+                <td><strong>Total de animales entregados al turno entrante</strong></td>      
+              </tr>
+             
+              <tr *ngFor="let especie of especyes" class="">
+                <td><strong>{{especie.nombre}}</strong></td>
+                
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>             
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>             
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+        
+              </tr>
+              <tr class="">
+                <td><strong>Total</strong></td>
+                
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>             
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>             
+                <td><strong><input value="0" class="tam"></strong></td>
+                <td><strong><input value="0" class="tam"></strong></td>
+        
+              </tr>
+
+              </table>
+              <br>
+            <br>
+           <div padding>
+            <h1>Nomenclatura:</h1>
+            <h2>• Brigada de Vigilancia Animal (BVA)</h2>
+            <h2>• Clínica de Atención Veterinaria Delegacional (CAVD) </h2>
+            <h2>• Fiscalía Desconcertada de Investigación en Delitos Ambientales y en Materia de Protección Urbana (FEDAPUR)</h2>
+            <h2>• Ley de Protección a los Animales del Distrito Federal (LPADF)</h2>
+            <h2>• Procuraduría Ambiental de Ordenamiento Territorial (PAOT)</h2>
+            <h2>• Procuraduría Federal de Protección al Ambiente (PROFEPA)</h2>
+            <h2>• Unidad de Contacto del Secretario (UCS).</h2>
+        
+           </div>
+
+  </ion-card>
+ 
+
+</div>
+<!--<ul *ngFor="let post of posts | async ">
+  <li>
+
+    {{post.fecha}}
+    <br>
+    {{post.folioucs}}
+    <br>
+    {{post.folioInt}}
+    <br>
+    {{post.horaRec}}
+    <br>
+    {{post.horaAten}}
+    <br>
+    {{post.fechaRec}}
+    <br>
+    {{post.nombre}}
+    <br>
+    {{post.direccion}}
+    <br>
+    {{post.colonia}}
+    <br>
+    {{post.telefono}}
+    <br>
+    {{post.delegacion.nombre}}
+    <br>
+    {{post.region}}
+    <br>
+    {{post.sector}}
+    <br>
+    {{post.cuadrante}}
+    <br>
+    {{post.tipo_aten.nombre}}
+    <br>
+    {{post.especie.nombre}}
+    <br>
+    {{post.patrullas}}
+    <br>
+    {{post.elementos}}
+    <br>
+    {{post.observaciones}}
+    <br>
+    <img src="{{post.image}}">
+    <br>
+    {{post.usuario.displayName}}
+    <br>
+    {{post.latitud}}
+    <br>  
+    {{post.longitud}}
+  </li>
+</ul>
+-->
+
+</ion-content>
+

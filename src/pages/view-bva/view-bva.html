@@ -1,0 +1,93 @@
+<ion-header>
+
+  <ion-toolbar color="azul">
+
+    <ion-title>Reportes generados</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openNewUserModal()">
+        <ion-icon name="add"></ion-icon>
+
+
+
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!--
+  Generated template for the ViewBvaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/escripol.png" class="ing"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="login-content">
+ 
+    
+  <div >
+
+    <ion-list>
+     
+        <ion-card  *ngFor="let item of items"  class="brillo" (click)="viewDetails(item.payload.doc.id,item.payload.doc.data())">
+
+            <ion-card-content class="brillo">
+                <ion-card-title style="text-align: center;">PARTE INFORMATIVO<br>B.V.A
+                </ion-card-title>
+        <div class="align" align="right">
+
+        <br>
+        <h3>Fecha: {{item.payload.doc.data().fecha}}</h3>
+        <h3>Folio UCS: {{item.payload.doc.data().folioucs}}</h3>
+        <h3>Folio Interno: {{item.payload.doc.data().folioInt}}</h3>
+        <h3>Hora Rec.: {{item.payload.doc.data().horaRec}} </h3>
+        <h3>Hora Atención: {{item.payload.doc.data().horaAten}}</h3>
+        <h3>Fecha Recepción: {{item.payload.doc.data().fechaRec}}</h3>
+        </div>
+        <br>
+        <div class="align" align="left"> 
+          <h2>Trabajador:<br><p>{{ item.payload.doc.data().usuario.displayName }}</p> </h2>
+          <h2>Matricula: <br><p>{{ item.payload.doc.data().usuario.matricula }}</p></h2>  
+          <br>
+          <h3 >Nombre Solicitante: {{item.payload.doc.data().nombre}}</h3>
+            <h3>Dirección: {{item.payload.doc.data().direccion}}</h3>
+            <h3>Colonia: {{item.payload.doc.data().colonia}}</h3> 
+            <h3>Telefono: {{item.payload.doc.data().telefono}}</h3>
+            <br>
+            <h2>Georeferencia: </h2>
+            <h3 >{{item.payload.doc.data().latitud }} , {{ item.payload.doc.data().longitud }}</h3>
+            <br>
+            <h3>Delegacion: {{item.payload.doc.data().delegacion.nombre}}</h3>
+            <h3>Región: {{item.payload.doc.data().region}}</h3>
+            <h3>Sector: {{item.payload.doc.data().sector}}</h3>
+            <h3>Cuadrante: {{item.payload.doc.data().cuadrante}}</h3>
+            <h3>Tipo de Atención: {{item.payload.doc.data().tipo_aten.nombre}}</h3>
+            <h3>Especie: {{item.payload.doc.data().especie.nombre}}</h3>
+            <pre > <h3>Patrullas en sitio: {{item.payload.doc.data().patrullas}}</h3></pre>
+            <pre > <h3>Elementos en sitio (SSPDF): {{item.payload.doc.data().elementos}}</h3></pre>
+            <pre ><h3>Observaciones: {{item.payload.doc.data().observaciones}}</h3></pre>
+      </div>
+  
+    <div >
+          <img class="img" [src]="item.payload.doc.data().image">
+    </div>
+ 
+    </ion-card-content>
+  
+    </ion-card>
+    
+    </ion-list>
+  </div>
+    <ion-fab bottom right>
+          <button ion-fab color="primary" (click)="openNewUserModal()">
+            <ion-icon name="filing"></ion-icon>
+          </button>
+        </ion-fab>
+
+</ion-content>

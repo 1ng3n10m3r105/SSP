@@ -1,0 +1,155 @@
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/form.png" class="ing"></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+  <form class="new-user-form" [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+
+    
+    <ion-item>
+      <ion-label floating >Folio UCS</ion-label>
+      <ion-input type="text" formControlName="folioucs" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Folio Interno</ion-label>
+      <ion-input type="text" formControlName="folioInt" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Hora Atención</ion-label>
+      <ion-datetime  displayFormat="h:mm A" pickerFormat="h:mm A" formControlName="horaAten" class="form-control" required></ion-datetime>
+    </ion-item>
+
+
+
+
+    <ion-item>
+      <ion-label floating >Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Delegación</ion-label>
+      <ion-select  interface="popover"  id="category" formControlName="delegacion" [compareWith]="compareFn"  required>
+              
+        <ion-option  class="popover-content" right="3rem" *ngFor="let delegation of delegations" [value]="delegation" >
+          {{delegation.nombre}}
+        </ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Direccion</ion-label>
+      <ion-input type="text" formControlName="direccion" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Colonia</ion-label>
+      <ion-input type="text" formControlName="colonia" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Telefono</ion-label>
+      <ion-input type="text" formControlName="telefono" class="form-control" required></ion-input>
+    </ion-item>
+
+ 
+
+    <ion-item>
+      <ion-label floating >Tipo de Atención</ion-label>
+      <ion-select  interface="popover"  id="category" formControlName="tipo_aten" [compareWith]="compareFn"  required>
+              
+        <ion-option  class="popover-content" right="3rem" *ngFor="let type_aten of types_aten" [value]="type_aten" >
+          {{type_aten.nombre}}
+        </ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Especie</ion-label>
+      <ion-select  interface="popover"  id="category" formControlName="especie" [compareWith]="compareFn"  required>
+              
+        <ion-option  class="popover-content" right="3rem" *ngFor="let especye of especyes" [value]="especye" >
+          {{especye.nombre}}
+        </ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Región</ion-label>
+      <ion-input type="text" formControlName="region" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Sector</ion-label>
+      <ion-input type="text" formControlName="sector" class="form-control" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Cuadrante</ion-label>
+      <ion-input type="text" formControlName="cuadrante" class="form-control" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating >Patrullas</ion-label>
+      <ion-textarea cols="15" rows="5" name="pat" type="text" formControlName="patrullas" class="form-control"  required></ion-textarea>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label floating >Elementos en sitio(No. de empleado SSPDF)</ion-label>
+      <ion-textarea cols="15" rows="5" name="ele" type="text" formControlName="elementos" class="form-control"  required></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating >Observaciones</ion-label>
+      <ion-textarea cols="15" rows="5" name="obs" type="text" formControlName="observaciones" class="form-control" required></ion-textarea>
+    </ion-item>
+  
+
+  
+ 
+    <div>
+      <ion-row no-padding>  
+        <ion-col no-padding col-6 offset-3>
+          <ion-item *ngIf="image">
+            <img [src]="image">
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row no-padding class="user-image-row">
+        <ion-col no-padding width-60>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+
+    
+
+
+ 
+  <ion-fab top right class="form-action-button"  block type="submit">
+    <button ion-fab >
+      <ion-icon name="add-circle"></ion-icon>
+    </button>
+  </ion-fab>
+    
+    
+  </form>
+
+  <ion-fab class="aligin" bottom right>
+      <button ion-fab  block color="danger" (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-fab>
+
+
+
+
+</ion-content>

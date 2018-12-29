@@ -1,3 +1,140 @@
 page-home {
+  .back-button.show-back-button {
+    display: none;
+}
+  
+  .profile-image{
+    img{
+        height: 200px;
+        width: 200px;
+        border-radius:50%;
+        border: 4px solid rgba(255,255,255,0.4);
+        -webkit-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 142px -37px rgba(0,0,0,0.75);
+    }
+}
+.beer{
+  max-width:5rem ;
+ 
+  position: relative;
+}
+.beer1{
+  max-width:5.4rem ;
+ 
+  position: relative;
+}
+.scroll-content {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+} 
+  .aligin{
+        right: 8rem; /* Old browsers */
+         
+    }
+    
+    .login-content {
+       
+      background: rgba(235,235,235,1);
+      background: -moz-linear-gradient(-45deg, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 54%, rgba(237,237,237,1) 100%);
+      background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(235,235,235,1)), color-stop(47%, rgba(255,255,255,1)), color-stop(54%, rgba(255,255,255,1)), color-stop(100%, rgba(237,237,237,1)));
+      background: -webkit-linear-gradient(-45deg, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 54%, rgba(237,237,237,1) 100%);
+      background: -o-linear-gradient(-45deg, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 54%, rgba(237,237,237,1) 100%);
+      background: -ms-linear-gradient(-45deg, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 54%, rgba(237,237,237,1) 100%);
+      background: linear-gradient(135deg, rgba(235,235,235,1) 0%, rgba(255,255,255,1) 47%, rgba(255,255,255,1) 54%, rgba(237,237,237,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ededed', GradientType=1 );
+ 
+     
+        .logo-row {
+          padding-top: 50px;
+          padding-bottom: 20px;
+        }
+     
+        .login-box {
+          border-radius: 2rem;
+          background: #4a74d6;
+          background: -moz-linear-gradient(-45deg, #5c82da 0%, #1b58a3 57%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #5c82da 0%, #1b58a3 57%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #5c82da 0%, #1b58a3 57%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    
+          
+          padding: 20px 20px 0px 20px;
+          margin-top: 30px;
+        }
+     
+        ion-row {
+           align-items: center;
+           text-align: center;
+         }
+     
+         ion-item {
+             border-radius: 30px !important;
+             padding-left: 30px !important;
+             font-size: 0.9em;
+             margin-bottom: 10px;
+             border: 1px solid #ffffff;
+             border-bottom: 0px !important;
+             box-shadow: none !important;
+         }
+     
+         .signup-col {
+           margin: 0px 16px 0px 16px;
+           padding-bottom: 20px;
+         }
+     
+         .item-inner {
+           border-bottom-color: #ffffff !important;
+           box-shadow: none !important;
+         }
+     
+         .submit-btn {
+            background: #1b3d8e; /* Old browsers */
+            background: -moz-linear-gradient(-45deg, #1b3d8e 0%, #041a34 57%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, #1b3d8e 0%,#041a34 57%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, #1b3d8e 0%,#041a34 57%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        
+            border-radius: 30px !important;
+           border: 1px solid #ffffff;
+         }
+         h1{
+             color: #ffffff;
+         }
+         .register-btn {
+           color: #ffffff;
+           font-size: 0.8em;
+         }
+      }
+  .ing{
+    width: 40rem;
+  }
+  .ssp{
+    width: 7rem;
+    height: 7rem;
+  }
+  .fab{
+    width: 6rem !important;
+height: 6rem !important;
+  }
+  .fab-in-list{
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+  .tamaño{
+    max-width: 5rem;
+    max-height: 5rem;
+  }
+.aliginuser{
+  position: relative;
+  text-align: center;
+
 
 }
+  }
+  .access{
+    div{
+        background-color:rgb(43, 177, 88)!important;
+    }
+  }

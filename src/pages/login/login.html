@@ -1,0 +1,104 @@
+
+<ion-content class="login-content ">
+	
+	
+    <div class="limiter">
+      <div class="container-login100" style="background-image: url('./assets/imgs/img-01.jpg'); ">
+        <div class="wrap-login100 p-t-190 p-b-30" style="position: absolute;top: 0rem;">
+        <div class="login-box">	
+          <form class="m " #signInForm="ngForm" [formGroup]="validations_form"  (ngSubmit)="tryLogin(validations_form.value)">
+            
+            <div class="login100-form-avatar sep1">
+              <img src="./assets/imgs/securi.png" alt="AVATAR">
+            
+            </div>
+  
+            <span class="login100-form-title p-t-20 p-b-45 sep">
+              <img src="./assets/imgs/ssplog.png" class="ing" alt="AVATAR">
+              </span>
+        
+  
+                <div>
+                    <div>
+                      <div inset>
+          
+            
+  
+  
+          
+            <div class="wrap-input100 validate-input m-b-10 sep" >
+                
+  
+              <input  class="input100" type="email" name="email" placeholder="Email" formControlName="email" required>
+              <span class="focus-input100"></span>
+              
+              <span class="symbol-input100">
+                  <ion-icon class="emailuser ion-icon" name="person" alt=""></ion-icon>
+                
+              </span>
+
+    <div class="error1 validation-errors">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+            {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+            </div>
+            <div class="wrap-input100 validate-input m-b-10 sep" >
+                
+  
+              <input  class="input100" type="password"  placeholder="Password" formControlName="password" required >
+              <span class="focus-input100"></span>
+              
+              <span class="symbol-input100">
+                  <ion-icon class="emailuser ion-icon" name="lock" item-key></ion-icon>
+                
+              </span>
+              <div class="error1 validation-errors">
+                  <ng-container *ngFor="let validation of validation_messages.password">
+                    <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+                      {{ validation.message }}
+                    </div>
+                  </ng-container>
+                </div>
+            </div>
+  
+  
+      
+          </div>
+        </div>
+      </div>
+      <label class="error-message">{{errorMessage}}</label>
+            <div class="container-login100-form-btn p-t-10 align1">
+              <button ion-buttom full class="login100-form-btn"full type="submit" [disabled]="!validations_form.valid" [disabled]="!signInForm.form.valid">
+                <h4>Entrar</h4>
+              </button>
+              
+            </div>		
+        			
+        
+    
+              
+          </form>
+          <div class="align container-login100-form-btn p-t-10 sep">
+              <button ion-buttom full class="login100-form-btn1" (click)="signup()" >
+                <h4>Registrar</h4>
+              </button>
+              
+            </div>	
+        </div>
+        
+        </div>
+      </div>
+    </div>
+    
+    
+  
+  </ion-content>
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->

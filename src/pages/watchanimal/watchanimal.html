@@ -1,0 +1,66 @@
+<!--
+  Generated template for the WatchanimalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/vig.png" class="ing"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="login-content">
+
+ 
+
+  <div class="display"> 
+      
+   
+  </div>  
+  <ion-list>
+    <ion-card *ngFor="let note of notes"  >
+        <button class="brillo" ion-item (click)="goToDetail(note.id)">
+        <ion-card-content>
+            <ion-card-title style="text-align: center;">PARTE INFORMATIVO<br>B.V.A
+            </ion-card-title>
+                <div class="align" align="right">
+            
+                    <h3>Fecha: {{note.fecha}}</h3>
+                    <h3>Folio UCS: {{note.folioucs}}</h3>
+                    <h3>Folio Interno: {{note.folioint}}</h3>
+                    <h3>Hora Rec.: {{note.horaRec}} </h3>
+                    <h3>Hora Atención: {{note.horaAten}}</h3>
+                    <h3>Fecha Recepción: {{note.fechaRec}}</h3>
+                </div>
+                <br>
+                <div class="align" align="left"> 
+                  <h3 >Nombre Solicitante: {{note.nombre}}</h3>
+                  <h3>Dirección: {{note.direccion}}</h3>
+                  <h3>Colonia: {{note.colonia}}</h3> 
+                  <h3>Telefono: {{note.telefono}}</h3>
+                  <h3>Delegacion: {{note.delegacion.nombre}}</h3>
+                  <h3>Tipo de Atención: {{note.tipo_aten.nombre}}</h3>
+                  <h3>Especie: {{note.especie.nombre}}</h3>
+                  
+                  <pre ><h3> {{note.observaciones}}</h3></pre>
+            </div>
+         
+   
+        
+         
+        </ion-card-content>
+        </button>
+  </ion-card>
+
+  </ion-list>
+
+   <ion-fab bottom right>
+      <button ion-fab color="primary" (click)="createNote()">
+        <ion-icon name="filing"></ion-icon>
+      </button>
+    </ion-fab>
+</ion-content>

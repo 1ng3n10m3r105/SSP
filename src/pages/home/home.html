@@ -1,14 +1,76 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="blue">
     <ion-title>
-      Ionic Blank
+     <img src="./assets/imgs/sspnav.png" class="ing">
     </ion-title>
+    <ion-buttons end>
+      <div>
+      <button ion-button icon-only (click)= "signOut()"><ion-icon name="lock"></ion-icon></button>
+    </div>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="login-content">
+  
+  <div class="aliginuser">
+    <div class="profile-image">
+      <img src="./assets/imgs/securi.png">
+    </div>
+    <p>Nombre: {{(profileData | async)?.displayName}}</p>
+    <p>Matricula: {{(profileData | async)?.matricula}}</p>
+    <p>Puesto: {{(profileData | async)?.puesto}}</p>
+   
+       
+  </div>   
+
+  <ion-fab class="" top right meddle>
+        <button ion-fab  color="cielo" ><img style="max-width: 9rem;" src="./assets/imgs/securi.png" alt=""></button>
+     
+      <ion-fab-list side="bottom">
+         
+      <ion-fab  bottom middle>
+        <button ion-fab class="tamaño"  color="secondary1" ><img  class="beer1" src="./assets/imgs/perro.png" alt=""></button>
+        <ion-fab-list side="bottom">
+            <button ion-fab color="gris" (click)="createNoteEsc()"><img style="max-width: 5rem;" src="./assets/imgs/logo-esc.png" alt=""></button>
+            <button ion-fab color="bluebuen" (click)="createNote()"><img style="max-width: 5rem;" src="./assets/imgs/logo-pol.png" alt=""></button>
+            
+        </ion-fab-list>
+      </ion-fab>
+        </ion-fab-list>
+        
+      <ion-fab-list side="left">
+            <button ion-fab color="light" (click)="createNoteUsec()"><img class="" style="max-width: 3.3rem;" src="./assets/imgs/a.png" alt=""></button>
+            <button ion-fab  color="amarillo" (click)="createNoteAlcoholimetro()"><img class="beer" src="./assets/imgs/beer2.png" alt=""></button>
+            <button ion-fab color="gris" (click)="createNoteVigilancia()"><img src="./assets/imgs/cam.png" alt=""></button>
+      </ion-fab-list>
+
+
+      
+         </ion-fab>
+
+         <ion-fab right bottom>
+          <button ion-fab class="" color="yellow" (click)="mostrar_modalayuda()"><img src="./assets/imgs/inter.png"></button>
+       
+        </ion-fab>
+  
+        
+  
+
+      <ion-fab left bottom>
+        <button ion-fab class="" color="dark"><ion-icon name="arrow-dropup"></ion-icon></button>
+        <ion-fab-list side="top">
+            <button ion-fab color="gris" (click)="createType_aten()"><img src="./assets/imgs/atencion.png" alt=""></button>
+            <button ion-fab color="light" (click)="createDelegation()"><img src="./assets/imgs/tlalpan-mapa.png" alt=""></button>
+            <button ion-fab  color="light" (click)="createEspecie()"><img style='max-width: 7rem' src="./assets/imgs/especie.png" alt=""></button>
+             </ion-fab-list>
+      </ion-fab>
+
+      
+
+
+ 
+      
+  
+ 
 </ion-content>

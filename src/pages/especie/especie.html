@@ -1,0 +1,69 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="blue">
+    <ion-title><img src="./assets/imgs/sspATEN.png" class="ing"></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content  *ngIf="show">
+    
+<form #form="ngForm" >
+    
+        <ion-item>
+        <ion-label floating>Agregar Especie</ion-label>
+        <ion-input type="text" [(ngModel)]="especye.nombre"  name="cie" #cie="ngModel" required></ion-input>
+        </ion-item>
+        <div class="form-error" *ngIf="cie.errors && (cie.dirty || cie.touched)">
+            <p color="danger" [hidden]="!cie.errors.required">Campo requerido.</p>
+            </div>
+
+
+
+            <ion-list class="marg-top" >
+                <ion-card *ngFor="let especye of especyes" >
+                    <button class="brillo" ion-item (click)="goToDetailEspecie(especye.id)">
+                    <ion-card-content>
+                        <ion-card-title>{{ especye.nombre }}</ion-card-title>
+            
+                    </ion-card-content>
+                    </button>
+              </ion-card>
+            </ion-list>
+             
+
+             
+               
+  
+  </form>
+  <ion-fab top right>
+      <button ion-fab  (click)="addEspecie(especye)" [disabled]="!form.form.valid">
+        <ion-icon name="add-circle">
+          
+        </ion-icon>
+      </button>
+    </ion-fab>
+
+    <ion-fab class="aligin" top right>
+        <button ion-fab *ngIf="id != 0"  (click)="deleteEspecie(especye)" color="danger">
+          <ion-icon name="trash">
+            
+          </ion-icon>
+        </button>
+      </ion-fab>
+
+
+
+        
+
+
+</ion-content>
+
